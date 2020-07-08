@@ -1,0 +1,25 @@
+<div class="container">
+  <table class="table">
+    <thead>
+      <tr>
+
+        <th scope="col">Product Name</th>
+        <th scope="col">Category</th>
+        <th scope="col">ImageUrl</th>
+        <th scope="col">AVG</th>
+        <th scope="col">Details</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let produit of produits">
+        <td>{{produit.productName}}</td>
+        <td>{{produit.category}}</td>
+        <td><img src="{{produit.imageUrl}}" style="width: 30px ; height: 30px;"></td>
+        <td>{{ avg(produit)}}</td>
+        <td><a [routerLink]="['/details' , produit._id]" class="btn btn-primary">details</a></td>
+      </tr>
+
+    </tbody>
+  </table>
+
+</div>
